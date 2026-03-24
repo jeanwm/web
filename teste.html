@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra mais</title>
+</head>
+<body>
+    <div>
+        <p><a href="index.html">Voltar</a></p>
+
+        <h1>E você?</h1>
+
+        <h3>Descubra mais!</h3>
+    </div>
+
+    <div>
+        <p>Faça nosso teste e descubra quão afinado sobre gaitas você está!</p>
+
+        <hr>
+        <div> 
+            <form method="POST" action="">
+                <!-- incluir mais perguntas -->
+
+                <p>Seu nome:</p>
+                <input type="text" id="nomeUsuario" name="nomeUsuario">
+                <br><br>
+
+                <p>Qual é o nome do componente característico da gaita que abre e fecha para fazer a passagem do ar pelas palhetas?</p>
+                <input type="radio" id="q1Botao" name="questao1">
+                <label for="q1Botao">Botão</label>
+                <input type="radio" id="q1Fole" name="questao1">
+                <label for="q1Fole">Fole</label>
+                <input type="radio" id="q1Aleta" name="questao1">
+                <label for="q1Aleta">Aleta</label>
+                <br><br>
+
+                <p>Quais gêneros musicais abaixo são comumente associados à gaita?</p>
+                <input type="checkbox" id="q2check1" name="q2check1" value="tango">
+                <label for="q2check1">Tango</label>
+                <input type="checkbox" id="q2check2" name="q2check2" value="rock">
+                <label for="q2check2">Rock</label>
+                <input type="checkbox" id="q2check3" name="q2check3" value="pagode">
+                <label for="q2check3">Pagode</label>
+                <input type="checkbox" id="q2check4" name="q2check4" value="sertanejo">
+                <label for="q2check4">Sertanejo</label>
+                <input type="checkbox" id="q2check5" name="q2check5" value="chamame">
+                <label for="q2check5">Chamamé</label>
+                <br><br>
+
+                <p>O que te deixa mais interessado sobre gaitas?</p>
+                <textarea id="qfinal" name="qfinal"></textarea>
+                <br><br>
+
+                <button type="reset">Limpar</button>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
