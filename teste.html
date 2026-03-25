@@ -7,15 +7,15 @@
     <title>Descubra mais</title>
 </head>
 <body>
-    <div>
+    <header>
         <p><a href="index.html">Voltar</a></p>
 
         <h1>E você?</h1>
 
         <h3>Descubra mais!</h3>
-    </div>
+    </header>
 
-    <div>
+    <section>
         <p>Faça nosso teste e descubra quão afinado sobre gaitas você está!</p>
 
         <hr>
@@ -24,7 +24,10 @@
                 <!-- incluir mais perguntas -->
 
                 <p>Seu nome:</p>
-                <input type="text" id="nomeUsuario" name="nomeUsuario">
+                <input type="text" id="nomeUsuario" name="nomeUsuario" required>
+                <br>
+                <p>Seu e-mail:</p>
+                <input type="email" id="emailUsuario" name="emailUsuario" required>
                 <br><br>
 
                 <p>Qual é o nome do componente característico da gaita que abre e fecha para fazer a passagem do ar pelas palhetas?</p>
@@ -57,6 +60,11 @@
                 <button type="submit">Enviar</button>
             </form>
         </div>
-    </div>
+    </section>
+
+    <br><br>
+    <footer>
+        <p>Feito por Jean Ernani Witt Meier na disciplina de Desenvolvimento Web - TADS - UDESC. 2026.</p>
+    </footer>
 </body>
 </html>

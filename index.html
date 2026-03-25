@@ -7,18 +7,24 @@
     <title>Gaitas</title>
 </head>
 <body>
-    <div>
-        <h1>Gaitas</h1>
-        <h3>O que é uma gaita?</h3>
-    </div>
+    <header>
+        <div>
+            <h1>Gaitas</h1>
+            <h3>O que é uma gaita?</h3>
+        </div>
 
-    <div>
+        <aside>
+            <canvas id="canvas" width="92" height="92"></canvas>
+        </aside>
+    </header>
+
+    <section>
         <p>A <b>gaita</b> (também conhecida como sanfona ou <i>acordeon</i>, não a ser confundida com a gaita de boca) é, de forma geral, um instrumento de <b>aerófono</b> (família da qual também fazem parte a flauta, trompete etc.) caracterizado, em especial, pelo fole, que é o componente que é "fechado" ou "aberto" para forçar a passagem do ar por pequenas palhetas que vibram, e então produzem som.</p>
 
         <p>No Brasil é um instrumento muito popular, muito ligado à música tradicional de praticamente todas as regiões do Brasil. Seja pelo nome de "gaita", "sanfona" ou "acordeon", ganhou muito destaque na música popular brasileira principalmente a partir da década de 1950, com destaque para o sanfoneiro Luiz Gonzaga, no nordeste, e Mary Terezinha, gaiteira muito presente na obra de Teixeirinha, famoso trovador do Rio Grande do Sul. A partir dos anos 1970 e 1980, perdeu espaço para outros instrumentos e gêneros musicais, mas ainda é muito difundido principalmente na música sertaneja, seja a "raiz" ou a "universitária", como também na música tradicional gaúcha, forró e axé, entre inúmeras outras.</p>
-    </div>
+    </section>
 
-    <div>
+    <section>
         <h3>Como diferenciar?</h3>
 
         <table border>
@@ -52,18 +58,121 @@
                 <td>Diatônica</td>
             </tr>
         </table>
-    </div>
+    </section>
 
-    <h3>Conheça mais a fundo!</h3>
-    <p>No Brasil, há duas variações principais da gaita: A <a href="gaitas/acordeon.html">sanfona</a> e a <a href="gaitas/gaitaponto.html">gaita-ponto</a>. Conheça cada uma delas!</p>
-    <p><a href="teste.html">Descubra</a> quão afinado sobre gaitas você está!</p>
+    <section>
+        <h3>Conheça mais a fundo!</h3>
+        <p>No Brasil, há duas variações principais da gaita: A <a href="gaitas/acordeon.html">sanfona</a> e a <a href="gaitas/gaitaponto.html">gaita-ponto</a>. Conheça cada uma delas!</p>
+        <p><a href="teste.html">Descubra</a> quão afinado sobre gaitas você está!</p>
+    </section>
 
     <hr>
-    <h3>Galeria</h3>
-    <img src="assets/img/todeschini-1.png" width="320px">
-    <img src="assets/img/minuano-1.png" width="320px">
-    <img src="assets/img/scandalli-1.png" width="320px">
+    <section>   
+        <h3>Galeria</h3>
+        <img src="assets/img/todeschini-1.png" width="320px">
+        <img src="assets/img/minuano-1.png" width="320px">
+        <img src="assets/img/scandalli-1.png" width="320px">
+    
+        <p><small>Fotos: Armazém do Acordeon e Guilherme Garcia</small></p>
+    </section>
 
-    <p><small>Fotos: Armazém do Acordeon e Guilherme Garcia</small></p>
+    <br><br>
+    <footer>
+        <p>Feito por Jean Ernani Witt Meier na disciplina de Desenvolvimento Web - TADS - UDESC. 2026.</p>
+
+        <svg height="130" width="500">
+            <defs>
+              <linearGradient id="grad1">
+                <stop offset="0%" stop-color="green" />
+                <stop offset="100%" stop-color="red" />
+              </linearGradient>
+            </defs>
+            <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+            <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">SDG</text>
+        </svg>
+
+        <p>Site das Gaitas</p>
+    </footer>
+
+    <!-- script para canvas -->
+    <script>
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+        let radius = canvas.height / 2;
+        ctx.translate(radius, radius);
+        radius = radius * 0.90
+        setInterval(drawClock, 1000);
+        
+        function drawClock() {
+            drawFace(ctx, radius);
+            drawNumbers(ctx, radius);
+            drawTime(ctx, radius);
+        }
+        
+        function drawFace(ctx, radius) {
+            const grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+            grad.addColorStop(0, '#333');
+            grad.addColorStop(0.5, 'white');
+            grad.addColorStop(1, '#333');
+            ctx.beginPath();
+            ctx.arc(0, 0, radius, 0, 2*Math.PI);
+            ctx.fillStyle = 'white';
+            ctx.fill();
+            ctx.strokeStyle = grad;
+            ctx.lineWidth = radius*0.1;
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+            ctx.fillStyle = '#333';
+            ctx.fill();
+        }
+        
+        function drawNumbers(ctx, radius) {
+            ctx.font = radius*0.15 + "px arial";
+            ctx.textBaseline="middle";
+            ctx.textAlign="center";
+            for(let num = 1; num < 13; num++){
+                let ang = num * Math.PI / 6;
+                ctx.rotate(ang);
+                ctx.translate(0, -radius*0.85);
+                ctx.rotate(-ang);
+                ctx.fillText(num.toString(), 0, 0);
+                ctx.rotate(ang);
+                ctx.translate(0, radius*0.85);
+                ctx.rotate(-ang);
+            }
+        }
+        
+        function drawTime(ctx, radius){
+            const now = new Date();
+            let hour = now.getHours();
+            let minute = now.getMinutes();
+            let second = now.getSeconds();
+            //hour
+            hour=hour%12;
+            hour=(hour*Math.PI/6)+
+            (minute*Math.PI/(6*60))+
+            (second*Math.PI/(360*60));
+            drawHand(ctx, hour, radius*0.5, radius*0.07);
+            //minute
+            minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+            drawHand(ctx, minute, radius*0.8, radius*0.07);
+            // second
+            second=(second*Math.PI/30);
+            drawHand(ctx, second, radius*0.9, radius*0.02);
+        }
+        
+        function drawHand(ctx, pos, length, width) {
+            ctx.beginPath();
+            ctx.lineWidth = width;
+            ctx.lineCap = "round";
+            ctx.moveTo(0,0);
+            ctx.rotate(pos);
+            ctx.lineTo(0, -length);
+            ctx.stroke();
+            ctx.rotate(-pos);
+        }
+    </script>
+
 </body>
 </html>
