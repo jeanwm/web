@@ -97,4 +97,11 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
     }
+
+    // login
+    btnLogin = document.querySelector("#login");
+
+    btnLogin.onclick = function() {
+        location.href = "login.html";
+    }
 });
