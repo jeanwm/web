@@ -18,7 +18,11 @@
 
         <aside class="col-3 d-flex justify-content-center">
             <canvas id="canvas" width="92" height="92"></canvas>
-            <p id="saudacao" class="m-auto"></p>
+
+            <div class="d-flex flex-column align-items-center ms-5">
+                <p id="saudacao" class="m-auto"></p>
+                <button id="login" class="w-50">Entre!</button>
+            </div>
         </aside>
     </header>
 
@@ -244,6 +248,7 @@
             ctx.stroke();
             ctx.rotate(-pos);
         }
+
     </script>
 
 </body>

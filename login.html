@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="assets/src/style.css" rel="stylesheet">
+    <script src="assets/src/script.js"></script>
+    <title>Boas vindas!</title>
+</head>
+<body>
+    <header class="d-flex m-5 flex-column header-site">
+        <p><a href="index.html">Voltar</a></p>
+
+        <h1 class="title-page">Boas vindas!</h1>
+    </header>
+
+    <section class="d-flex flex-column m-5 p-5" style="background-color: #FFF; border-radius: 16px;">
+        <div class="d-flex flex-column"> 
+            <form method="POST" action="" id="login">
+                <div class="d-flex flex-column mb-3">
+                    <!-- <div class="mb-3 me-5">
+                        <p class="mb-0">Seu nome:</p>
+                        <input type="text" id="nomeUsuario" name="nomeUsuario" style="width: 320px">
+                    </div> -->
+
+                    <div class="mb-3">
+                        <p class="mb-0">Seu e-mail:</p>
+                        <input type="email" id="emailUsuario" name="emailUsuario" style="width: 320px">
+                    </div>
+
+                    <div class="mb-3">
+                        <p class="mb-0">Sua senha:</p>
+                        <input type="password" id="senhaUsuario" name="senhaUsuario" style="width: 320px">
+                    </div>
+
+                    <hr>
+                    <div class="mb-3">
+                        <p class="mb-0">Seu e-mail:</p>
+                        <input type="email" id="emailUsuario" name="emailUsuario" style="width: 320px">
+                    </div>
+
+                    <div class="mb-3">
+                        <p class="mb-0">Sua data de nascimento:</p>
+                        <input type="date" id="nascimentoUsuario" name="nascimentoUsuario" style="width: 320px">
+                    </div>
+
+                    <div>
+                        <p class="mb-0">Seu gênero:</p>
+
+                        <input type="radio" id="generoMasculino" name="generoUsuario">
+                        <label for="generoMasculino">Masculino</label>
+                        <input type="radio" id="generoFeminino" name="generoUsuario" style="margin-left: 16px">
+                        <label for="generoFeminino">Feminino</label>
+                        <input type="radio" id="generoOutro" name="generoUsuario" style="margin-left: 16px">
+                        <label for="generoOutro">Outro</label>
+                    </div>
+                </div>
+
+                <button id="btnResetLogin" class="me-3" style="border-radius: 16px; border: none; background-color: #b1b1b1; color: #FFF; padding: 8px 12px;">Limpar</button>
+                <button type="submit" id="btnSubmitLogin" style="border-radius: 16px; border: none; background-color: #00b100; color: #FFF; padding: 8px 12px;">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <br><br>
+    <footer class="d-flex flex-column align-items-center m-5">
+        <p>Feito por Jean Ernani Witt Meier na disciplina de Desenvolvimento Web - TADS - UDESC. 2026.</p>
+
+        <div class="d-flex justify-content-center">
+            <svg width="200px">
+                <defs>
+                  <linearGradient id="grad1">
+                    <stop offset="0%" stop-color="green" />
+                    <stop offset="100%" stop-color="red" />
+                  </linearGradient>
+                </defs>
+                <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+                <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">SDG</text>
+            </svg>
+        </div>
+
+        <p>Site das Gaitas</p>
+    </footer>
+</body>
+</html>
